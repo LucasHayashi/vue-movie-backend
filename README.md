@@ -10,9 +10,9 @@ Backend para o aplicativo [Vue Movie](https://github.com/LucasHayashi/vue-movie-
 ## ⚙️ Variáveis de Ambiente
 
 ```env
-API_URL=       # Endpoint da API v3 do TMDB
-API_KEY=       # Access Token do TMDB
-AUTH_CALLBACK= # URL de callback para autenticação
+API_URL=                https://api.themoviedb.org/3
+API_ACCESS_TOKEN=       # Access Token do TMDB
+AUTH_CALLBACK=          # URL de callback para autenticação
 ```
 
 ## 🛣️ Endpoints
