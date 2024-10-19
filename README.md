@@ -72,7 +72,7 @@ Pesquise por palavras-chave.
   "media_type": "movie",
   "media_id": 157336,
   "type": "favorite", // ou "watchlist"
-  "favorite": true // false para remover
+  "favorite": true // ou "watchlist": true // false para remover
 }
 ```
 
@@ -83,7 +83,7 @@ Pesquise por palavras-chave.
   "media_type": "tv",
   "media_id": 1100,
   "type": "favorite", // ou "watchlist"
-  "favorite": true // false para remover
+  "favorite": true // ou "watchlist": true // false para remover
 }
 ```
 
