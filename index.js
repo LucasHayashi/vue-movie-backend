@@ -10,20 +10,15 @@ const person = require('./routes/person');
 const auth = require('./routes/auth');
 const user = require('./routes/user');
 
-const allowedHost = process.env.ALLOWED_HOST;
-const environment = process.env.ENVIRONMENT;
+const allowedHost = process.env.ALLOWED_HOST || '*';
 
 const corsOptions = {
     origin: function (origin, callback) {
-        if (environment === 'production') {
-            if (origin === allowedHost) {
-                callback(null, true);
-            } else {
-                console.error(`CORS Error: Origin ${origin} is not allowed`);
-                callback(new Error('CORS Error: Access denied. This origin is not allowed.'), false);
-            }
-        } else {
+        if (origin === allowedHost || !origin) {
             callback(null, true);
+        } else {
+            console.error(`CORS Error: Origin ${origin} is not allowed. allowedHost: ${allowedHost}`);
+            callback(new Error('CORS Error: Access denied. This origin is not allowed.'), false);
         }
     }
 };
@@ -32,7 +27,7 @@ function customErrorHandler(err, req, res, next) {
     if (err.message.startsWith('CORS')) {
         return res.status(403).json({ error: err.message });
     }
-    
+
     res.status(400).json({ error: 'An error occurred', details: err.message });
 }
 
