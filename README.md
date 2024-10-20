@@ -51,10 +51,11 @@ Pesquise por palavras-chave.
 
 ### Autenticação
 
-| Método | Endpoint                              | Descrição                            |
-| ------ | ------------------------------------- | ------------------------------------ |
-| GET    | `/auth/start`                         | Gera link de autenticação TMDB       |
-| GET    | `/auth/session?request_token={token}` | Retorna session_id após autenticação |
+| Método | Endpoint                                | Descrição                            |
+| ------ | --------------------------------------- | ------------------------------------ |
+| GET    | `/auth/start`                           | Gera link de autenticação TMDB       |
+| GET    | `/auth/session?request_token={token}`   | Retorna session_id após autenticação |
+| DELETE | `/auth/session?session_id={session_id}` | Exclui a sessão do usuário           |
 
 ### Usuário
 
