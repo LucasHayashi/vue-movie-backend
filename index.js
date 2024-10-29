@@ -14,7 +14,7 @@ const allowedHost = process.env.ALLOWED_HOST || '*';
 
 const corsOptions = {
     origin: function (origin, callback) {
-        if (origin === allowedHost || !origin) {
+        if (origin === allowedHost || !origin || allowedHost === '*') {
             callback(null, true);
         } else {
             console.error(`CORS Error: Origin ${origin} is not allowed. allowedHost: ${allowedHost}`);
